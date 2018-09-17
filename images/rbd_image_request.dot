@@ -1,0 +1,16 @@
+digraph g {
+    rankdir=BT
+
+    graph [
+        splines=curved
+    ]
+
+    ImageReadRequest -> ImageRequest
+    AbstractImageWriteRequest -> ImageRequest
+
+    ImageWriteRequest -> AbstractImageWriteRequest
+    ImageDiscardRequest -> AbstractImageWriteRequest
+    ImageFlushRequest -> AbstractImageWriteRequest
+    ImageWriteSameRequest -> AbstractImageWriteRequest
+    ImageCompareAndWriteRequest -> AbstractImageWriteRequest
+}

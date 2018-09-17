@@ -5,20 +5,6 @@ digraph g {
         splines=curved
     ]
 
-
-
-/*    
-    node [
-        fontname="verdana"
-        shape="box"
-        style="filled"
-        fillcolor="#B2D4EB"
-        fixedsize=true
-        width=3.0
-        height=0.3
-    ]
-*/
-
     ObjectReadRequest -> ObjectRequest
     AbstractObjectWriteRequest -> ObjectRequest
 
