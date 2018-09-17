@@ -6,7 +6,9 @@
 
 ![rbd write flow](images/rbd_write_flow.png)
 
-
+每个Image维护了一个异步的正在进行中的操作的列表，`xlist<io::AsyncOperation*> async_ops;`，
+在第5步中，从ImageRequest的队列中取出一个请求处理的时候，会把这个请求加入到async_ops中，后续
+flush操作会等待async_ops中的全部操作都完成了才会返回。
 
 
 ## 类之间的关系

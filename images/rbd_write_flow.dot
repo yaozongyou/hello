@@ -6,9 +6,9 @@ digraph g {
         fixedsize=true
         width=0.30
         height=0.30
-    ];
+    ]
     
-    start [ label="" ];
+    start [ label="" ]
    
     node [
         shape=doublecircle,
@@ -17,8 +17,9 @@ digraph g {
         fixedsize=true
         width=0.3
         height=0.3
-    ];
-    end   [ label="" ];
+    ]
+
+    end   [ label="" ]
     
     node [
         shape=rectangle
@@ -26,7 +27,8 @@ digraph g {
         fontname="Microsoft YaHei"
         fixedsize=false
         margin="0.20,0.10"
-    ];
+    ]
+
     step1 [ label="1) Image::write" ]
     step2 [ label="2) ictx->io_work_queue->write" ]
     step3 [ label="3) ImageRequestWQ<I>::aio_write" ]
