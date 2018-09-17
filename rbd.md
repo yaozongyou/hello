@@ -1,6 +1,11 @@
 
 # rbd
 
+## 写流程
+
+
+
+
 ## 类之间的关系
 
 ![rbd image request](images/rbd_image_request.png)
@@ -10,3 +15,20 @@ request的请求转化成对rados层的object的request的请求，object reques
 的关系如下：
 
 ![rbd object request](images/rbd_object_request.png)
+
+## 队列
+
+io_work_queue: 
+
+
+
+## QOS
+
+## 相关配置项
+
+|  配置项 |  默认值 |  含义  |
+|---------|--------|----------|
+|rbd_op_threads| 1 | number of threads to utilize for internal processing |
+
+
+
