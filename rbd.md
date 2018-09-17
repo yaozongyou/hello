@@ -7,9 +7,9 @@
 
 每个Image维护了一个异步的正在进行中的操作的列表，`xlist<io::AsyncOperation*> async_ops;`，
 在第5步中，从ImageRequest的队列中取出一个请求处理的时候，会把这个请求加入到async_ops中，后续
-flush请求会等待async_ops中的全部操作都完成了才会返回。另外第7步中，一个ImageRequest可能
-对应了多个ObjectRequest，所以AioCompletion会分成多个C_AioRequest，当所以的C_AioRequest都
-finish的时候，这个AioCompletion才会complete，最终调用async_op.finish_op();从async_ops链表中
+flush请求会等待async_ops中的全部操作都完成了才会返回。另外第7步中，一个ImageRequest可能对应了
+多个ObjectRequest，所以AioCompletion会分成多个C_AioRequest，当所有的C_AioRequest都 finish的
+时候，这个AioCompletion才会complete，最终调用async_op.finish_op();从async_ops链表中
 删除这个完成的操作。
 
 
