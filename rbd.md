@@ -29,6 +29,8 @@ io_work_queue:
 |  配置项 |  默认值 |  含义  |
 |---------|--------|----------|
 |rbd_op_threads| 1 | number of threads to utilize for internal processing |
+|rbd_op_thread_timeout| 60 | time in seconds for detecting a hung thread |
+|rbd_non_blocking_aio| true | process AIO ops from a dispatch thread to prevent blocking |
 
 
 
