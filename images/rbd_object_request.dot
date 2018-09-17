@@ -1,0 +1,29 @@
+digraph g {
+    rankdir=BT
+
+    graph [
+        splines=curved
+    ]
+
+
+
+/*    
+    node [
+        fontname="verdana"
+        shape="box"
+        style="filled"
+        fillcolor="#B2D4EB"
+        fixedsize=true
+        width=3.0
+        height=0.3
+    ]
+*/
+
+    ObjectReadRequest -> ObjectRequest
+    AbstractObjectWriteRequest -> ObjectRequest
+
+    ObjectWriteRequest -> AbstractObjectWriteRequest
+    ObjectDiscardRequest -> AbstractObjectWriteRequest
+    ObjectWriteSameRequest -> AbstractObjectWriteRequest
+    ObjectCompareAndWriteRequest -> AbstractObjectWriteRequest
+}
