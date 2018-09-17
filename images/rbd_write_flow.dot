@@ -27,19 +27,23 @@ digraph g {
         fixedsize=false
         margin="0.20,0.10"
     ];
-    step1 [ label="1) Image::write" ];
-    step2 [ label="2) ictx->io_work_queue->write" ];
-    step3 [ label="3) ImageRequest<I>::aio_write" ];
-    step4 [ label="4) AbstractImageWriteRequest<I>::send_request" ];
-    step5 [ label="5) AbstractImageWriteRequest<I>::send_object_requests" ];
-    step6 [ label="6) ObjectDispatchSpec::send" ];
-    step7 [ label="7) AbstractObjectWriteRequest<I>::write_object" ];
-    start -> step1;
-    step1 -> step2;
-    step2 -> step3;
-    step3 -> step4;
-    step4 -> step5;
-    step5 -> step6;
+    step1 [ label="1) Image::write" ]
+    step2 [ label="2) ictx->io_work_queue->write" ]
+    step3 [ label="3) ImageRequestWQ<I>::aio_write" ]
+    step4 [ label="4) ImageRequestWQ<I>::queue" ]
+    step5 [ label="5) ImageRequestWQ<I>::_void_dequeue" ]
+    step6 [ label="6) AbstractImageWriteRequest<I>::send_request" ]
+    step7 [ label="7) AbstractImageWriteRequest<I>::send_object_requests" ]
+    step8 [ label="8) ObjectDispatchSpec::send" ]
+    step9 [ label="9) AbstractObjectWriteRequest<I>::write_object" ]
+    start -> step1
+    step1 -> step2
+    step2 -> step3
+    step3 -> step4
+    step4 -> step5
+    step5 -> step6
     step6 -> step7
-    step7 -> end;
+    step7 -> step8
+    step8 -> step9
+    step9 -> end
 }
