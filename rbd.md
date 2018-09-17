@@ -4,6 +4,9 @@
 ## 写流程
 
 
+![rbd write flow](images/rbd_write_flow.png)
+
+
 
 
 ## 类之间的关系
